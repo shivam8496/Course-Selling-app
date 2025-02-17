@@ -1,25 +1,24 @@
-const jwt  = require('jsonwebtoken');
-const secret = "superS3cr3t1";
+const jwt = require('jsonwebtoken');
+require('dotenv').config();  // Load environment variables
 
-function generateToken (data){
-      
-    return jwt.sign(data,secret);
+const secret = process.env.JWT_SECRET; // Fetch secret from .env
+
+function generateToken(data) {
+    return jwt.sign(data, secret);
 }
 
-function jwtAuthenticate (req, res ,next){
+function jwtAuthenticate(req, res, next) {
     var data = req.headers.authorize;
-    if(data){
-      var token = data.split(' ')[1];
-      jwt.verify(token,secret,(err,original)=>{
-        if(err) return res.status(403).json({message:"error occured"});
-         else{req.user = original;
-         next();}
-      });
+    if (data) {
+        var token = data.split(' ')[1];
+        jwt.verify(token, secret, (err, original) => {
+            if (err) return res.status(403).json({ message: "error occurred" });
+            req.user = original;
+            next();
+        });
+    } else {
+        res.status(404).json({ message: "wrong bearer Token" });
     }
-    else {
-      res.status(404).json({message:"wrong bearer Token"});
-    }
-  
 }
 
-module.exports = {generateToken,jwtAuthenticate};
+module.exports = { generateToken, jwtAuthenticate };
