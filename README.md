@@ -2,4 +2,4 @@
 
 ## Link to Production build
 
-[MIT](https://enchanting-eclair-8d420c.netlify.app/)
+[Link](https://enchanting-eclair-8d420c.netlify.app/)
