@@ -23,7 +23,7 @@ function Courses(){
         const fetchResponse = async()=>{ 
           try
             {
-            const res = await axios.get('http://localhost:3000/admin/courses',{
+            const res = await axios.get('https://course-selling-app-api.onrender.com/admin/courses',{
             headers:{
                 authorize:"Bearer " + localStorage.getItem("token")
             }

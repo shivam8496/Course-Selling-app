@@ -21,7 +21,7 @@ function Signup(){
     // const [user, setUser] = useRecoilState(userState);
     const register = () => {
         
-        axios.post(`http://localhost:3000/admin/signup`,{
+        axios.post(`https://course-selling-app-api.onrender.com/admin/signup`,{
             username:email,
             password:password,
         }).then((response)=>{

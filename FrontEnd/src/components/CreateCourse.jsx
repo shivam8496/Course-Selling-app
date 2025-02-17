@@ -30,7 +30,7 @@ function CreateCourse(){
     
     const addCourse = async () => {
        try {
-        var response = await axios.post(`http://localhost:3000/admin/courses`,{
+        var response = await axios.post(`https://course-selling-app-api.onrender.com/admin/courses`,{
             // Body data
             title:title,
             description:description,

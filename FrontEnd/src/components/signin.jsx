@@ -16,7 +16,7 @@ function Signin(){
     const[password,setpassword] = useState("");
     
     const register = () => {
-        axios.post(`http://localhost:3000/admin/login`,{
+        axios.post(`https://course-selling-app-api.onrender.com/admin/login`,{
             username:email,
             password:password,
         }).then((response)=>{

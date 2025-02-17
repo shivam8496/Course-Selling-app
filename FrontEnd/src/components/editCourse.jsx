@@ -29,7 +29,7 @@ function EditCourse(){
         setPublished(event.target.value);
       };
     React.useEffect(()=>{
-        axios.get("http://localhost:3000/admin/courses/"+CourseId,{
+        axios.get("https://course-selling-app-api.onrender.com/admin/courses/"+CourseId,{
             headers:{
                 authorize:"Bearer "+localStorage.getItem("token")
             }            
@@ -44,7 +44,7 @@ function EditCourse(){
     },[])
 
     function update(){
-        axios.put("http://localhost:3000/admin/courses/"+CourseId,{
+        axios.put("https://course-selling-app-api.onrender.com/admin/courses/"+CourseId,{
             // Body data
             title:title,
             description:description,

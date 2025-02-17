@@ -21,7 +21,7 @@ function Landing(){
         const fetchResponse = async()=>{ 
           try
             {
-            const res = await axios.get('http://localhost:3000/',{
+            const res = await axios.get('https://course-selling-app-api.onrender.com/',{
             headers:{
                 Accept : "application/json"
             }
